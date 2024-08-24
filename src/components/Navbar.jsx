@@ -10,6 +10,9 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li className='duration-200 rounded-full px-2 py-1 hover:bg-white hover:text-black'>
+          <Link to="/array">Array</Link>
+        </li>
+        <li className='duration-200 rounded-full px-2 py-1 hover:bg-white hover:text-black'>
           <Link to="/string">String</Link>
         </li>
         {/* Add more links here */}
