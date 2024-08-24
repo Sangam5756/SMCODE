@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className='bg-slate-200 p-2  '>
-      <ul className='flex mx-4 gap-3'>
-        <li>
+    <nav className=' p-2  bg-slate-900'>
+
+      <ul className='flex mx-4 text-white gap-3'>
+        <li className='duration-200 rounded-full px-2 py-1 hover:bg-white hover:text-black'>
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li className='duration-200 rounded-full px-2 py-1 hover:bg-white hover:text-black'>
           <Link to="/string">String</Link>
         </li>
         {/* Add more links here */}
