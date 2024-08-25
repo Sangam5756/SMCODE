@@ -152,6 +152,7 @@ const data = [
         "explanation": "The target 3 is not present in the array."
       }
     ],
+    "category":"array",
     "solutions": [
       {
         "type": "optimal",
