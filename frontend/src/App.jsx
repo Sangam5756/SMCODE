@@ -6,6 +6,8 @@ const App = () => {
   return (
     <>
     <Navbar/>
+
+
     
       <main>
         <Outlet />

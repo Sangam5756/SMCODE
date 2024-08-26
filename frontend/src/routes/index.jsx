@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import Home from '../pages/Home';
-import ArrayPage from '../pages/ArrayPage';
-import Stringp from '../pages/Stringp';
+import DisplayPage from '../pages/DisplayPage';
 
 const router = createBrowserRouter([
   {
@@ -14,13 +13,10 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'array',  // Typically use lowercase for paths
-        element: <ArrayPage />,
+        path: '/:id',  // Typically use lowercase for paths
+        element: <DisplayPage />,
       },
-      {
-        path:"string",
-        element:<Stringp/>
-      }
+      
     ],
   },
 ]);

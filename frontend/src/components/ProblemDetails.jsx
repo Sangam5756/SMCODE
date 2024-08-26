@@ -22,6 +22,7 @@ const ProblemDetails = ({ problem }) => {
   const hasBetter = problem.solutions?.some(sol => sol.type === 'better');
   const hasOptimal = problem.solutions?.some(sol => sol.type === 'optimal');
 
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -47,9 +48,12 @@ const ProblemDetails = ({ problem }) => {
   return (
     <div ref={ref} className={`p-4 border rounded-lg shadow-lg fade-in ${isVisible ? 'visible' : ''}`}>
       {/* title */}
+
       <h1 className="text-2xl font-bold mb-2 hover:text-blue-700">
         {problem?.id}. <a href={problem?.link} target='_blank' rel='noopener noreferrer'>{problem?.title}</a>
       </h1>
+
+
       <p className="text-gray-700 mb-2"><strong>Difficulty:</strong> {problem.difficulty}</p>
       <p className="text-gray-600 mb-4">{problem.problem_description}</p>
 
@@ -95,6 +99,7 @@ const ProblemDetails = ({ problem }) => {
           <p className="text-gray-700 mb-4"><strong>Space Complexity:</strong> {selectedSolution.space_complexity || 'N/A'}</p>
         </div>
       </div>
+      
 
       {/* test cases */}
       <div>
