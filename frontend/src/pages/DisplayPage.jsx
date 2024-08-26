@@ -5,18 +5,33 @@ import ProblemDetails from '../components/ProblemDetails'
 
 const DisplayPage = () => {
   const [problemData, setProblemData] = useState([])
-  
-  
+  const [error, setError] = useState(false);
+
   const location = useLocation();
   const category = location.pathname.slice(1);
-  console.log(category)
+
 
   const handlesearch = async () => {
     const response = await axios.post("http://localhost:5000/api/category", { category: category })
-    console.log(response)
-    setProblemData(response.data)
+    // const response = await axios.post("https://smcodebackend5756.onrender.com/api/category", { category: category })
+
+    if (response.data.success) {
+      setProblemData(response.data.data)
+      setError(false);
+
+    }
+
+    if (response.data.error) {
+      setError(true);
+      setProblemData(null)
+    }
+
+
 
   }
+
+
+
 
 
   useEffect(() => {
@@ -27,11 +42,12 @@ const DisplayPage = () => {
 
   return (
     <>
+      {error && <p className='mt-2 text-center bg-slate-500  text-xl'>Topic Not Found it will be  available soon</p>}
       <div className=''>
         {
-          problemData.map(problem => {
+          problemData?.map(problem => {
             return (
-              <div className='border  m-2'><ProblemDetails problem={problem} key={problem.id} /></div>
+              <div key={problem.id} className='border  m-2'><ProblemDetails problem={problem} key={problem.id} /></div>
             )
           })
         }

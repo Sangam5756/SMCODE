@@ -12,11 +12,17 @@ export const getAllQuestions = async (req, res) => {
 export const getCategory = async (req, res) => {
   try {
     const { category } = req.body;
-    
 
 
     const questions = await QuestionSchema.find({category :category}).populate("test_cases","solutions");
 
+    
+    if(questions.length === 0){
+      return res.json({
+        error:true
+
+      })
+    }
     
     res.status(200).json({
         data:questions,
