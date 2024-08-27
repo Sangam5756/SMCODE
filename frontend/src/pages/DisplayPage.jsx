@@ -12,8 +12,8 @@ const DisplayPage = () => {
 
 
   const handlesearch = async () => {
-    const response = await axios.post("http://localhost:5000/api/category", { category: category })
-    // const response = await axios.post("https://smcodebackend5756.onrender.com/api/category", { category: category })
+    // const response = await axios.post("http://localhost:5000/api/category", { category: category })
+    const response = await axios.post("https://smcodebackend5756.onrender.com/api/category", { category: category })
 
     if (response.data.success) {
       setProblemData(response.data.data)
